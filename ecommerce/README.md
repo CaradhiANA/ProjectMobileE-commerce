@@ -1,6 +1,6 @@
 # Project Flutter
 
-project flutter bertamakan e-commerce dan berjudul "PEMBUATAN SISTEM REKOMENDASI MENU E-COMMERCE KERIPIK TEMPE KARINA"
+project flutter bertemakan e-commerce dan berjudul "PEMBUATAN SISTEM REKOMENDASI MENU E-COMMERCE KERIPIK TEMPE KARINA"
 
 ## Getting Started
 
