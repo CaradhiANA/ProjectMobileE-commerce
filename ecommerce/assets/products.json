@@ -1,0 +1,28 @@
+{
+    "products": [
+        {
+            "name": "Keripik Pisang",
+            "imageURL": "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/3956b067-69bf-421f-9ca9-82843d235d70_Go-Biz_20230322_111529.jpeg?auto=format",
+            "brand": "500 g",
+            "price": 100
+        },
+        {
+            "name": "Keripik Tempe Ori",
+            "imageURL": "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/78e94161-c3a9-4ee4-9cd3-5c37c025ffd0_Go-Biz_20210212_150112.jpeg?auto=format",
+            "brand": "500 g",
+            "price": 49
+        },
+        {
+            "name": "Keripik Kentang",
+            "imageURL": "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/a22bf39c-1e47-4ba2-aec0-d9873ca8d29c_Go-Biz_20211218_132908.jpeg?auto=format",
+            "brand": "300 g",
+            "price": 58
+        },
+        {
+            "name": "Keripik Tempe Pedas Manis",
+            "imageURL": "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/78e94161-c3a9-4ee4-9cd3-5c37c025ffd0_Go-Biz_20210212_150112.jpeg?auto=format",
+            "brand": "400 g",
+            "price": 69
+        }
+    ]
+}
