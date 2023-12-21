@@ -1,4 +1,8 @@
-Project Mobile flutter "PEMBUATAN SISTEM REKOMENDASI MENU E-COMMERCE KERIPIK TEMPE KARINA" 
+<p align="center">
+Project Mobile flutter 
+
+<p align="center">  
+"PEMBUATAN SISTEM REKOMENDASI MENU E-COMMERCE KERIPIK TEMPE KARINA" 
 
 Kelas : SIB3A
 
@@ -8,11 +12,4 @@ Kelompok 1 :
 - Ananda Galang Saputra (2141762124);
 - Firdaus Rizky Saputra (2141762134);
 - Rizki Ridho Prasetyo (2141762130);
-
-
-D4 SISTEM INFORMASI BISNIS 
-
-JURUSAN TEKNOLOGI INFORMASI 
-
-POLITEKNIK NEGERI MALANG 
 
