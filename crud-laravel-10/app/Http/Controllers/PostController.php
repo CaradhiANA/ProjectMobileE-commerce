@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 //import Model "Post
-use App\Models\Post;
 
+use App\Http\Resources\ProductResource;
+use App\Models\Post;
+use App\Models\Product;
 //return type View
 use Illuminate\View\View;
 
@@ -25,10 +27,12 @@ class PostController extends Controller
     public function index(): View
     {
         //get posts
-        $posts = Post::latest()->paginate(5);
+        $posts = Product::latest()->get();
 
         //render view with posts
-        return view('posts.produk', compact('posts'));
+        return view('posts.produk', [
+            'posts' => ProductResource::collection(Product::with('reviews')->latest()->get())
+        ]);
     }
     /**
      * create
@@ -51,8 +55,8 @@ class PostController extends Controller
         //validate form
         $this->validate($request, [
             'image'   => 'required|image|mimes:jpeg,jpg,png|max:2048',
-            'nama'    => 'required|min:5',
-            'jenis'   => 'required|min:10',
+            'nama'    => 'required',
+            'jenis'   => 'required',
             'harga'   => 'required',
             'stock'   => 'required',
             'kadaluarsa'   => 'required'
@@ -63,7 +67,7 @@ class PostController extends Controller
         $image->storeAs('public/posts', $image->hashName());
 
         //create post
-        Post::create([
+        Product::create([
             'image'   => $image->hashName(),
             'nama'    => $request->nama,
             'jenis'   => $request->jenis,
@@ -84,7 +88,7 @@ class PostController extends Controller
     public function show(string $id): View
     {
         //get post by ID
-        $post = Post::findOrFail($id);
+        $post = Product::findOrFail($id);
 
         //render view with post
         return view('posts.show', compact('post'));
@@ -98,7 +102,7 @@ class PostController extends Controller
     public function edit(string $id): View
     {
         //get post by ID
-        $post = Post::findOrFail($id);
+        $post = Product::findOrFail($id);
 
         //render view with post
         return view('posts.edit', compact('post'));
@@ -116,15 +120,15 @@ class PostController extends Controller
         //validate form
         $this->validate($request, [
             'image'   => 'image|mimes:jpeg,jpg,png|max:2048',
-            'nama'    => 'required|min:5',
-            'jenis'   => 'required|min:10',
+            'nama'    => 'required',
+            'jenis'   => 'required',
             'harga'   => 'required',
             'stock'   => 'required',
             'kadaluarsa'   => 'required'
         ]);
 
         //get post by ID
-        $post = Post::findOrFail($id);
+        $post = Product::findOrFail($id);
 
         //check if image is uploaded
         if ($request->hasFile('image')) {
@@ -170,7 +174,7 @@ class PostController extends Controller
     public function destroy($id): RedirectResponse
     {
         //get post by ID
-        $post = Post::findOrFail($id);
+        $post = Product::findOrFail($id);
 
         //delete image
         Storage::delete('public/posts/'. $post->image);

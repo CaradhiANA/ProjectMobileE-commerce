@@ -212,7 +212,7 @@ class _ExplorePageState extends State<ExplorePage>
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Image.network(
-                                product.image!,
+                                product.imageUrl!,
                                 width: 100,
                                 height: 100,
                                 fit: BoxFit.cover,
@@ -321,7 +321,7 @@ class _ExplorePageState extends State<ExplorePage>
                           },
                           contentPadding: EdgeInsets.all(8),
                           leading: Image.network(
-                            product.image!,
+                            product.imageUrl!,
                             width: 80,
                             height: 80,
                             fit: BoxFit.cover,
@@ -429,7 +429,7 @@ class _ExplorePageState extends State<ExplorePage>
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Image.network(
-                                product.image!,
+                                product.imageUrl!,
                                 width: 100,
                                 height: 100,
                                 fit: BoxFit.cover,
@@ -541,7 +541,7 @@ class _ExplorePageState extends State<ExplorePage>
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Image.network(
-                                product.image!,
+                                product.imageUrl!,
                                 width: 100,
                                 height: 100,
                                 fit: BoxFit.cover,
@@ -653,7 +653,7 @@ class _ExplorePageState extends State<ExplorePage>
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Image.network(
-                                product.image!,
+                                product.imageUrl!,
                                 width: 100,
                                 height: 100,
                                 fit: BoxFit.cover,

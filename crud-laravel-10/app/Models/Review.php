@@ -10,17 +10,19 @@ class Review extends Model
     use HasFactory;
 
     protected $fillable = [
-      'user_id',
-      'product_id',
-      'text',
-      'rating',
+        'user_id',
+        'product_id',
+        'text',
+        'rating',
     ];
 
-    public function user() {
+    public function user()
+    {
         return $this->hasOne(User::class, 'id', 'user_id');
     }
 
-    public function product() {
-        return $this->hasOne(Product::class, 'product_id');
+    public function product()
+    {
+        return $this->hasOne(Product::class, 'id', 'product_id');
     }
 }

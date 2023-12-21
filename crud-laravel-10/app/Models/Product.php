@@ -20,7 +20,16 @@ class Product extends Model
         'rating',
     ];
 
-    public function reviews () {
+    public function reviews()
+    {
         return $this->hasMany(Review::class, 'product_id');
+    }
+
+    public function getImageUrlAttribute()
+    {
+        if (strpos($this->image, 'http') === 0) {
+            return $this->image;
+        }
+        return asset('storage/posts/' . $this->image);
     }
 }

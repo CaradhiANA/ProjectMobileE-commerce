@@ -17,10 +17,10 @@ return new class extends Migration
             $table->string('nama');
             $table->integer('harga');
             $table->integer('stock');
-            $table->enum('jenis', ['Tempe', 'BuahBuahan', 'Umbi']);
+            $table->enum('jenis', ['Tempe', 'BuahBuahan', 'Umbi'])->default('Tempe');
             $table->date('kadaluarsa');
-            $table->float('berat');
-            $table->integer('rating');
+            $table->float('berat')->default(0);
+            $table->integer('rating')->default(0);
             $table->timestamps();
         });
     }

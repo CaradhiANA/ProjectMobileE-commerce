@@ -78,9 +78,12 @@
                                     </div>
                                 @enderror
                             </div>
+                            <br>
+                            <br>
 
                             <button type="submit" class="btn btn-md btn-primary">SIMPAN</button>
                             <button type="reset" class="btn btn-md btn-warning">RESET</button>
+                            <a href="{{ route('posts.index') }}" class="btn btn-md btn-secondary">BATAL</a>
 
                         </form> 
                     </div>

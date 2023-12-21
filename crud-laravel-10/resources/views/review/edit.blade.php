@@ -9,57 +9,53 @@
                 @method('PUT') <!-- Use PUT method for update -->
 
                 <div class="form-group">
-                    <label class="font-weight-bold">Booking ID</label>
-                    <input type="text" class="form-control @error('booking_id') is-invalid @enderror" name="booking_id" value="{{ old('booking_id', $review->booking_id) }}" placeholder="Masukkan Booking ID">
+                    <label for="product_id" class="font-weight-bold">Product</label>
+                    <select name="product_id" id="product_id" class="form-select">
+                        @foreach($products as $product)
+                        <option value="{{$product->id}}">{{$product->nama}}</option>
+                        @endforeach
+                    </select>
+                </div>
 
-                    @error('booking_id')
-                        <div class="alert alert-danger mt-2">
-                            {{ $message }}
-                        </div>
-                    @enderror
+                <div class="form-group">
+                    <label for="user_id" class="font-weight-bold">User</label>
+                    <select name="user_id" id="user_id" class="form-select">
+                        @foreach($users as $user)
+                        <option value="{{$user->id}}">{{$user->name}}</option>
+                        @endforeach
+                    </select>
                 </div>
 
                 <div class="form-group">
                     <label class="font-weight-bold">Comments</label>
-                    <textarea class="form-control @error('comments') is-invalid @enderror" name="comments" placeholder="Masukkan Comments">{{ old('comments', $review->comments) }}</textarea>
+                    <textarea class="form-control @error('comments') is-invalid @enderror" name="text" placeholder="Masukkan Comments">{{ old('text', $review->text) }}</textarea>
 
                     @error('comments')
-                        <div class="alert alert-danger mt-2">
-                            {{ $message }}
-                        </div>
+                    <div class="alert alert-danger mt-2">
+                        {{ $message }}
+                    </div>
                     @enderror
                 </div>
 
                 <div class="form-group">
                     <label class="font-weight-bold">Star Rating</label>
-                    <select class="form-control @error('star_rating') is-invalid @enderror" name="star_rating">
+                    <select class="form-control @error('rating') is-invalid @enderror" name="rating">
                         <option value="" disabled>Pilih Star Rating</option>
-                        @for ($i = 1; $i <= 5; $i++)
-                            <option value="{{ $i }}" {{ old('star_rating', $review->star_rating) == $i ? 'selected' : '' }}>{{ $i }}</option>
-                        @endfor
+                        @for ($i = 1; $i <= 5; $i++) <option value="{{ $i }}" {{ old('rating', $review->rating) == $i ? 'selected' : '' }}>{{ $i }}</option>
+                            @endfor
                     </select>
 
-                    @error('star_rating')
-                        <div class="alert alert-danger mt-2">
-                            {{ $message }}
-                        </div>
+                    @error('rating')
+                    <div class="alert alert-danger mt-2">
+                        {{ $message }}
+                    </div>
                     @enderror
                 </div>
-
-                <div class="form-group">
-                    <label class="font-weight-bold">Status</label>
-                    <input type="text" class="form-control @error('status') is-invalid @enderror" name="status" value="{{ old('status', $review->status) }}" placeholder="Masukkan Status">
-
-                    @error('status')
-                        <div class="alert alert-danger mt-2">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                </div>
+                <br>
+                <br>
 
                 <button type="submit" class="btn btn-md btn-primary">UPDATE</button>
-                <a href="{{ route('review.index') }}" class="btn btn-md btn-secondary">BATAL</a>
-
+                <a href="{{ route('reviews.index') }}" class="btn btn-md btn-secondary">BATAL</a>
             </form>
         </div>
     </div>

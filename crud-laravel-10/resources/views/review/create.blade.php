@@ -4,65 +4,56 @@
     <div class="card border-0 shadow-sm rounded">
         <div class="card-body">
             <form action="{{ route('reviews.store') }}" method="POST" enctype="multipart/form-data">
-
-
                 @csrf
+                <div class="form-group">
+                    <label for="product_id" class="font-weight-bold">Product</label>
+                    <select name="product_id" id="product_id" class="form-select">
+                        @foreach($products as $product)
+                        <option value="{{$product->id}}">{{$product->nama}}</option>
+                        @endforeach
+                    </select>
+                </div>
 
                 <div class="form-group">
-                    <label class="font-weight-bold">Booking ID</label>
-                    <input type="text" class="form-control @error('booking_id') is-invalid @enderror" name="booking_id" value="{{ old('booking_id') }}" placeholder="Masukkan Booking ID">
-
-                    <!-- error message untuk booking_id -->
-                    @error('booking_id')
-                        <div class="alert alert-danger mt-2">
-                            {{ $message }}
-                        </div>
-                    @enderror
+                    <label for="user_id" class="font-weight-bold">User</label>
+                    <select name="user_id" id="user_id" class="form-select">
+                        @foreach($users as $user)
+                        <option value="{{$user->id}}">{{$user->name}}</option>
+                        @endforeach
+                    </select>
                 </div>
 
                 <div class="form-group">
                     <label class="font-weight-bold">Comments</label>
-                    <textarea class="form-control @error('comments') is-invalid @enderror" name="comments" placeholder="Masukkan Comments">{{ old('comments') }}</textarea>
+                    <textarea class="form-control @error('comments') is-invalid @enderror" name="text" placeholder="Masukkan Comments"></textarea>
 
-                    <!-- error message untuk comments -->
                     @error('comments')
-                        <div class="alert alert-danger mt-2">
-                            {{ $message }}
-                        </div>
+                    <div class="alert alert-danger mt-2">
+                        {{ $message }}
+                    </div>
                     @enderror
                 </div>
 
                 <div class="form-group">
-                    <label class="font-weight-bold">Star Rating</label>
-                    <select class="form-control @error('star_rating') is-invalid @enderror" name="star_rating">
-                        <option value="" disabled selected>Pilih Star Rating</option>
-                        @for ($i = 1; $i <= 5; $i++)
-                            <option value="{{ $i }}" {{ old('star_rating') == $i ? 'selected' : '' }}>{{ $i }}</option>
-                        @endfor
+                    <label class="font-weight-bold">Star</label>
+                    <select class="form-control @error('rating') is-invalid @enderror" name="rating">
+                        <option value="" disabled>Pilih Star Rating</option>
+                        @for ($i = 1; $i <= 5; $i++) <option value="{{ $i }}">{{ $i }}</option>
+                            @endfor
                     </select>
 
-                    <!-- error message untuk star_rating -->
-                    @error('star_rating')
-                        <div class="alert alert-danger mt-2">
-                            {{ $message }}
-                        </div>
+                    @error('rating')
+                    <div class="alert alert-danger mt-2">
+                        {{ $message }}
+                    </div>
                     @enderror
                 </div>
-
-                <div class="form-group">
-                    <label class="font-weight-bold">Status</label>
-                    <input type="text" class="form-control @error('status') is-invalid @enderror" name="status" value="{{ old('status') }}" placeholder="Masukkan Status">
-
-                    <!-- error message untuk status -->
-                    @error('status')
-                        <div class="alert alert-danger mt-2">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                </div>
+                <br>
+                <br>
 
                 <button type="submit" class="btn btn-md btn-primary">SIMPAN</button>
                 <button type="reset" class="btn btn-md btn-warning">RESET</button>
+                <a href="{{ route('reviews.index') }}" class="btn btn-md btn-secondary">BATAL</a>
 
             </form>
         </div>

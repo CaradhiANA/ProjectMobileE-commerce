@@ -5,6 +5,7 @@ class Product {
   int? harga;
   int? stock;
   String? image;
+  String? imageUrl;
   String? kadaluarsa;
   int? berat;
   num? rating;
@@ -15,6 +16,7 @@ class Product {
     this.harga,
     this.stock,
     this.image,
+    this.imageUrl,
     this.kadaluarsa,
     this.berat,
     this.rating,
@@ -27,6 +29,7 @@ class Product {
       harga: json['harga'],
       stock: json['stock'],
       image: json['image'],
+      imageUrl: json['imageUrl'],
       kadaluarsa: json['kadaluarsa'],
       berat: json['berat'],
       rating: json['rating'],

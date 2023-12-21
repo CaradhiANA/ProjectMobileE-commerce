@@ -12,7 +12,8 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <link rel="stylesheet" href="app.css">
 
@@ -43,27 +44,14 @@
                             </a>
                         </li> --}}
                         <li class="nav-item" style="width: 10rem;">
-                            <a href="/home" class="nav-link align-middle px-4">
-                                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">PENJUALAN</span>
-                            </a>
-                        </li>
-                        <br>
-
-                        <li class="nav-item" style="width: 10rem;">
-                            <a href="/pilihBarang" class="nav-link align-middle px-4">
-                                <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">MASUK PRODUK</span>
+                            <a href="/users" class="nav-link  align-middle px-4">
+                                <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">USER</span>
                             </a>
                         </li>
                         <br>
                         <li class="nav-item" style="width: 10rem;">
                             <a href="/posts" class="nav-link align-middle px-4">
                                 <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">PRODUK</span>
-                            </a>
-                        </li>
-                        <br>
-                        <li class="nav-item" style="width: 10rem;">
-                            <a href="/Halo" class="nav-link align-middle px-4">
-                                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">FEEDBACK AND RATING</span>
                             </a>
                         </li>
                         <br>
@@ -75,10 +63,9 @@
                         <br>
                         <li class="nav-item" style="width: 10rem;">
                             <a href="/reviews" class="nav-link  align-middle px-4">
-                                <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">REVIEW</span>
+                                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">REVIEW</span>
                             </a>
                         </li>
-
                     </ul>
                     <hr>
 

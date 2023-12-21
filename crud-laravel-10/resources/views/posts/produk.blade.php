@@ -27,7 +27,7 @@
                     @forelse ($posts as $post)
                     <tr>
                         <td class="text-center">
-                            <img src="{{ asset('storage/posts/'.$post->image) }}" class="rounded" style="width: 150px">
+                            <img src="{{ $post->imageUrl }}" class="rounded" style="width: 150px">
                         </td>
                         <td>{{ $post->nama }}</td>
                         <td>{{ $post->jenis }}</td>
@@ -39,7 +39,10 @@
                                 <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-sm btn-primary">EDIT</a>
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-sm btn-danger">HAPUS</button>
+
+                                @if(count($post->reviews) < 1)
+                                    <button type="submit" class="btn btn-sm btn-danger">HAPUS</button>
+                                @endif
                             </form>
                         </td>
                     </tr>

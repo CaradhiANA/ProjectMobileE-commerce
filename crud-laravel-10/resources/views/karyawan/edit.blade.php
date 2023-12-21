@@ -22,10 +22,12 @@
                     <label for="gaji_karyawan" class="form-label">Gaji Karyawan</label>
                     <input id="gaji_karyawan" name="gaji_karyawan" type="number" class="form-control" value="{{ $karyawan->gaji_karyawan }}">
                 </div>
+                <br>
+                <br>
                 <div class="mt-2 d-flex gap-2">
 
                     <button type="submit" class="btn btn-md btn-primary">UPDATE</button>
-                    <button type="reset" class="btn btn-md btn-warning">RESET</button>
+                    <a href="{{ route('karyawan.index') }}" class="btn btn-md btn-secondary">BATAL</a>
                 </div>
             </form>
         </div>

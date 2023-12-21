@@ -23,7 +23,8 @@ class ProductResource extends JsonResource
             'kadaluarsa' => $this->kadaluarsa,
             'berat' => $this->berat,
             'rating' => $this->rating,
-            'reviews' => ReviewResource::collection($this->whenLoaded('reviews'))
+            'reviews' => ReviewResource::collection($this->whenLoaded('reviews')),
+            'imageUrl' => $this->imageUrl
         ];
     }
 }
