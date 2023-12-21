@@ -4,13 +4,10 @@ Kelas : SIB3A
 
 Kelompok 1 :
 
-Alega Naufal Akbar (2141762058);
-
-Ananda Galang Saputra (2141762124);
-
-Firdaus Rizky Saputra (2141762134);
-
-Rizki Ridho Prasetyo (2141762130);
+- Alega Naufal Akbar (2141762058);
+- Ananda Galang Saputra (2141762124);
+- Firdaus Rizky Saputra (2141762134);
+- Rizki Ridho Prasetyo (2141762130);
 
 
 D4 SISTEM INFORMASI BISNIS 
